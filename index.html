@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reach to You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>Reach to You</header>
+
+  <div class="profile">
+    <img src="crush.png" alt="Dreamy Crush" />
+  </div>
+
+  <div class="post">
+    <p>Just got back from the studio... thinking of you</p>
+  </div>
+
+  <div class="post">
+    <p>Late night thoughts... do you feel it too?</p>
+  </div>
+
+  <audio controls>
+    <source src="your-song.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="sparkles" id="sparkles"></div>
+
+  <script>
+    function randomFloat(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function createFloatingEmoji(className, emoji) {
+      const el = document.createElement("div");
+      el.className = className;
+      el.textContent = emoji;
+      el.style.left = randomFloat(0, 100) + "%";
+      el.style.top = "100%";
+      el.style.animationDelay = randomFloat(0, 3) + "s";
+      el.style.fontSize = randomFloat(14, 24) + "px";
+      document.getElementById("sparkles").appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
+
+    setInterval(() => {
+      createFloatingEmoji("sparkle", "✨");
+      createFloatingEmoji("heart", "♡");
+    }, 500);
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+  color: #444;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #ff69b4;
+}
+
+.profile {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.profile img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.post {
+  background: #fff;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 15px;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.post::before {
+  content: '♡';
+  font-size: 1.5rem;
+  color: #ff69b4;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+audio {
+  display: block;
+  margin: 2rem auto;
+  max-width: 90%;
+}
+
+.sparkles, .hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.sparkle, .heart {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: floatUp 4s ease-in infinite;
+  color: #ffb6c1;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    font-size: 2rem;
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .profile, .post {
+    margin: 1rem 1rem;
+    padding: 1rem;
+  }
+
+  audio {
+    width: 90%;
+  }
+}
